@@ -14,5 +14,4 @@ All of these projects are available with the intention that other people will en
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A6YGXL)
 
-## Bubble Sort
 <p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-4.png"></p>
