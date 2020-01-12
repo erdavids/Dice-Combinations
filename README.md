@@ -16,11 +16,11 @@ All of these projects are available with the intention that other people will en
 
 ## Examples
 
-### 2 Dice - 21 Groups
+### 2 Dice - 21 Combinations
 <p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-2.png"></p>
 
-### 4 Dice - 126 Groups
+### 4 Dice - 126 Combinations
 <p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-4.png"></p>
 
-### 6 Dice - 462 Groups
+### 6 Dice - 462 Combinations
 <p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-6.png"></p>
