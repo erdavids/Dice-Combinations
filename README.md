@@ -14,4 +14,13 @@ All of these projects are available with the intention that other people will en
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A6YGXL)
 
+## Examples
+
+### 2 Dice - 21 Groups
+<p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-2.png"></p>
+
+### 4 Dice - 126 Groups
 <p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-4.png"></p>
+
+### 6 Dice - 462 Groups
+<p align="center"><img src="https://github.com/erdavids/Dice-Combinations/blob/master/Examples/comb-6.png"></p>
