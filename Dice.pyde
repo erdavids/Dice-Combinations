@@ -1,10 +1,10 @@
 
 
 
-w, h = 1500, 1500
+w, h = 2200, 2300
 
-grid_pixel_width = 800
-grid_pixel_height = 1300
+grid_pixel_width = 1750
+grid_pixel_height = 2050
 
 
 die_size = 50
@@ -14,13 +14,14 @@ stroke_weight = 3
 
 edge = 3.0
 
-die_sep = die_size * 1.2
+x_die_sep = die_size * 1
+y_die_sep = die_size * .5
 group_sep = die_size * 1.75
 
 
 # Different grid Sizes for different dice count
-# 2 Dice - 21, 3 Dice - 56
-grid_width = 4
+# 2 Dice - 21, 3 Dice - 56, 4 Dice - 126
+grid_width = 9
 grid_height = 14
 
 
@@ -66,17 +67,25 @@ def draw_group(x, y, c):
     if len(c) == 1:
         draw_die(x, y, c[0])
     if len(c) == 2:
-        draw_die(x - die_sep, y, c[0])
-        draw_die(x + die_sep, y, c[1])
+        draw_die(x - x_die_sep, y, c[0])
+        draw_die(x + x_die_sep, y, c[1])
     if len(c) == 3:
-        draw_die(x - die_sep, y, c[0])
+        draw_die(x - x_die_sep, y, c[0])
         draw_die(x, y, c[1])
-        draw_die(x + die_sep, y, c[2])
+        draw_die(x + x_die_sep, y, c[2])
     if len(c) == 4:
-        draw_die(x - die_sep, y - die_sep, c[0])
-        draw_die(x + die_sep, y - die_sep, c[0])
-        draw_die(x - die_sep, y + die_sep, c[0])
-        draw_die(x + die_sep, y + die_sep, c[0])
+        draw_die(x - x_die_sep, y - y_die_sep, c[0])
+        draw_die(x + x_die_sep, y - y_die_sep, c[1])
+        draw_die(x - x_die_sep, y + y_die_sep, c[2])
+        draw_die(x + x_die_sep, y + y_die_sep, c[3])
+    if len(c) == 6:
+        draw_die(x - x_die_sep, y - y_die_sep, c[0])
+        draw_die(x, y - y_die_sep, c[1])
+        draw_die(x + x_die_sep, y - y_die_sep, c[2])
+        draw_die(x - x_die_sep, y + y_die_sep, c[3])
+        draw_die(x, y + y_die_sep, c[1])
+        draw_die(x + x_die_sep, y + y_die_sep, c[2])
+        
 
         
 def get_permutations(n, m):
@@ -95,7 +104,7 @@ def setup():
     
     
     combinations = []
-    f = loadStrings('Out/comb_with_replace-4.txt')
+    f = loadStrings('Out/comb_with_replace-6.txt')
     
     for c in f:
         combinations.append(list(int(x) for x in c.split(' ')))
@@ -111,10 +120,11 @@ def setup():
     for c in range(grid_width):
         for r in range(grid_height):
             draw_group(current_position[0], current_position[1], combinations[c * grid_height + r])
+            print(combinations[c * grid_height + r])
         
             current_position = (current_position[0], current_position[1] + vertical_sep)
         current_position = (current_position[0] + horizontal_sep, h/2 - grid_pixel_height/2.0)
         
-    save("Examples/" + str(int(random(10000))) + ".png")
+    save("Examples/comb-6.png")
     
     
