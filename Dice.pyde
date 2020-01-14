@@ -3,11 +3,11 @@
 #########
 
 # Size of the canvas
-w, h = 1200, 1200
+w, h = 4000, 4000
 
 # Size of the dice grid
-grid_pixel_width = 600
-grid_pixel_height = 1000
+grid_pixel_width = 3800
+grid_pixel_height = 3800
 
 # Individual die size
 die_size = 50
@@ -25,14 +25,14 @@ stroke_weight = 3
 edge = 3.0
 
 # How far apart each die will be from another in a group
-x_die_sep = die_size * .8
-y_die_sep = die_size * .6
+x_die_sep = die_size * 1.1
+y_die_sep = die_size * .55
 
 
 # Different grid Sizes for different dice count, use factor pairs
 # 2 Dice - 21, 3 Dice - 56, 4 Dice - 126, 6 Dice - 462
-grid_width = 3
-grid_height = 7
+grid_width = 21
+grid_height = 22
 
 
 # Draw the top face and dots
@@ -93,8 +93,8 @@ def draw_group(x, y, c):
         draw_die(x, y - y_die_sep, c[1])
         draw_die(x + x_die_sep, y - y_die_sep, c[2])
         draw_die(x - x_die_sep, y + y_die_sep, c[3])
-        draw_die(x, y + y_die_sep, c[1])
-        draw_die(x + x_die_sep, y + y_die_sep, c[2])
+        draw_die(x, y + y_die_sep, c[4])
+        draw_die(x + x_die_sep, y + y_die_sep, c[5])
     
     
 def setup():
@@ -107,10 +107,12 @@ def setup():
     combinations = []
     
     # Load the generated combinations from permutations.py
-    f = loadStrings('Out/comb_with_replace-2.txt')
+    f = loadStrings('Out/comb_with_replace-6.txt')
     
     for c in f:
         combinations.append(list(int(x) for x in c.split(' ')))
+        
+    print(combinations)
 
     
     horizontal_sep = float(grid_pixel_width)/(grid_width - 1)
@@ -126,6 +128,9 @@ def setup():
             current_position = (current_position[0], current_position[1] + vertical_sep)
         current_position = (current_position[0] + horizontal_sep, h/2 - grid_pixel_height/2.0)
         
-    save("Examples/comb-2.png")
+
+        
+    save("Examples/test.png")
+
     
     
